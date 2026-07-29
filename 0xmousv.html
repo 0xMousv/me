@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>0xMousv</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="crt-overlay"></div>
+<div class="bg-grid"></div>
+
+<div id="login-screen" class="login-screen">
+  <div class="login-card">
+    <div class="login-lock">&#128274;</div>
+    <p class="eyebrow">// restricted access</p>
+    <h2>root login</h2>
+    <p class="login-sub">authenticate to reach the command center</p>
+    <form id="login-form">
+      <label for="email">email</label>
+      <input type="email" id="email" required autocomplete="username">
+      <label for="password">password</label>
+      <input type="password" id="password" required autocomplete="current-password">
+      <button type="submit" class="btn">authenticate_</button>
+      <p id="login-status" class="status-msg"></p>
+    </form>
+  </div>
+</div>
+
+
+<div id="dashboard" class="admin-shell hidden">
+  <div class="admin-body">
+
+    <aside class="admin-sidebar">
+      <div class="brand"><span class="zero">0x</span>Mousv</div>
+      <p class="side-tag">command center</p>
+
+      <div class="status-pill"><span class="dot"></span> session active</div>
+
+      <nav class="side-nav">
+        <button class="nav-btn active" data-target="panel-compose">&gt; new entry</button>
+        <button class="nav-btn" data-target="panel-entries">&gt; all entries</button>
+      </nav>
+
+      <div class="side-foot">
+        <a href="index.html" target="_blank">&larr; view live site</a>
+        <button id="logout-btn" class="btn ghost" style="width:100%;">logout</button>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-header">
+        <p class="section-tag">0xMousv@Cyb3r_Ph4nt0ms:~#</p>
+        <h1>dashboard</h1>
+      </div>
+
+      <div class="stat-bar">
+        <div class="stat-pill">
+          <div class="num" id="stat-total">–</div>
+          <div class="lbl">total entries</div>
+        </div>
+        <div class="stat-pill">
+          <div class="num" id="stat-latest">–</div>
+          <div class="lbl">latest entry</div>
+        </div>
+        <div class="stat-pill">
+          <div class="num" style="color:var(--green);">ONLINE</div>
+          <div class="lbl">connection</div>
+        </div>
+      </div>
+
+      <!-- ---- compose ---- -->
+      <section id="panel-compose">
+        <div class="compose-grid">
+          <div class="panel">
+            <h2><span class="tag-num">01/</span> new entry</h2>
+            <form id="post-form">
+              <label for="title">title</label>
+              <input type="text" id="title" required>
+
+              <label for="excerpt">excerpt (short summary for the log list)</label>
+              <input type="text" id="excerpt">
+
+              <label for="content">content</label>
+              <textarea id="content" required></textarea>
+
+              <label>cover image (optional)</label>
+              <div class="dropzone" id="dropzone">
+                <span class="dz-icon">&#8593;</span>
+                drag an image here, or click to browse
+                <input type="file" id="image" accept="image/*">
+              </div>
+              <div class="image-preview-wrap hidden" id="image-preview-wrap">
+                <img id="image-preview" alt="cover preview">
+                <button type="button" class="remove-img" id="remove-img">remove</button>
+              </div>
+
+              <button type="submit" class="btn">publish_</button>
+              <p id="post-status" class="status-msg"></p>
+            </form>
+          </div>
+
+          <div>
+            <p class="preview-label">live preview</p>
+            <div class="log-entry preview-card">
+              <div id="preview-thumb-empty" class="thumb-empty">no cover image yet</div>
+              <img id="preview-thumb" class="thumb hidden" alt="">
+              <div class="meta">
+                <span class="id">#NEW</span>
+                <span id="preview-date"></span>
+              </div>
+              <h3 id="preview-title"></h3>
+              <p id="preview-excerpt"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---- entries ---- -->
+      <section id="panel-entries" class="hidden">
+        <div class="panel">
+          <h2><span class="tag-num">02/</span> all entries</h2>
+          <div id="posts-admin-list" class="entries-grid">
+            <p class="status-msg">loading...</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="mousv.js"></script>
+</body>
+</html>

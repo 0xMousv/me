@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Blog — 0xMousv</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="crt-overlay"></div>
+<div class="bg-grid"></div>
+
+<header class="site-nav">
+  <div class="wrap nav-row">
+    <a href="index.html" class="brand" style="text-decoration:none;"><span class="zero">0x</span>Mousv</a>
+    <nav class="nav-links">
+      <a href="index.html#about">about</a>
+      <a href="index.html#log">log</a>
+      <a href="admin.html">admin</a>
+    </nav>
+    <div class="prompt-line">root@Cyb3r_Ph4nt0ms:~#<span class="cur"></span></div>
+  </div>
+</header>
+
+<main class="wrap" style="padding:2.5rem 0 4rem;">
+  <a href="index.html#log" class="back-link">&larr; back to the log</a>
+  <div id="post-content">
+    <div class="empty-state">loading entry...</div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    root@Cyb3r_Ph4nt0ms:~# connection secure &nbsp;|&nbsp; &copy; <span id="year"></span> 0xMousv
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="post.js"></script>
+</body>
+</html>
