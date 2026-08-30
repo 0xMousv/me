@@ -2,7 +2,7 @@
 // Boot sequence
 // ==========================================================================
 const bootLines = [
-  "initializing Cyb3r_Ph4nt0ms terminal...",
+  "initializing SPHINXROOT terminal...",
   "loading kernel modules [ok]",
   "mounting /dev/identity ......... [ok]",
   "decrypting profile ............. [ok]",
